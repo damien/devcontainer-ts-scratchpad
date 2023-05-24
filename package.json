@@ -1,0 +1,14 @@
+{
+  "name": "ts-scratchpad",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "repository": "https://github.com/damien/devcontainer-ts-scratchpad.git",
+  "author": "Damien Wilson <damien@mindglob.com>",
+  "private": true,
+  "devDependencies": {
+    "esbuild": "^0.17.19"
+  },
+  "scripts": {
+    "build": "esbuild src/index.ts --bundle --outfile=dist/index.js"
+  }
+}
