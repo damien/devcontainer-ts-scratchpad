@@ -3,7 +3,14 @@
 {
 	"name": "Node.js & TypeScript",
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-	"image": "mcr.microsoft.com/devcontainers/typescript-node:0-20"
+	"image": "mcr.microsoft.com/devcontainers/typescript-node:0-20",
+
+	"mounts": [
+		// Mount node_modules as a container volume to avoid slow filesystem performance caused by
+		// reading node_modules from host operating system.
+		// See: https://code.visualstudio.com/remote/advancedcontainers/improve-performance#_use-a-targeted-named-volume
+		"source=${localWorkspaceFolderBasename}-node_modules,target=${containerWorkspaceFolder}/node_modules,type=volume"
+	],
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	// "features": {},
@@ -12,7 +19,7 @@
 	// "forwardPorts": [],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	// "postCreateCommand": "yarn install",
+	"postCreateCommand": "sudo chown node node_modules"
 
 	// Configure tool-specific properties.
 	// "customizations": {},
