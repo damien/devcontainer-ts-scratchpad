@@ -19,7 +19,14 @@
 	// "forwardPorts": [],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "sudo chown node node_modules"
+	"postCreateCommand": "sudo chown node node_modules",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"EditorConfig.EditorConfig"
+			]
+		}
+	}
 
 	// Configure tool-specific properties.
 	// "customizations": {},
