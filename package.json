@@ -14,7 +14,7 @@
     "typescript": "^5.0.4"
   },
   "scripts": {
-    "build": "esbuild --bundle --sourcemap --minify --outdir=dist src/index.ts",
+    "build": "esbuild --platform=node --bundle --sourcemap --minify --outdir=dist src/index.ts",
     "serve": "yarn build && node dist/index.js",
     "test": "jest"
   }
